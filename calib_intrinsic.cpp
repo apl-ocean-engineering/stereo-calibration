@@ -30,12 +30,12 @@ void setup_calibration(int board_width, int board_height, int num_imgs,
   int board_n = board_width * board_height;
 
   for (int k = 1; k <= num_imgs; k++) {
-    // printf("%s\n", k);
+    // std::cout << k << std::endl;
 
     char img_file[100];
     sprintf(img_file, "%s%s%d.%s", imgs_directory, imgs_filename, k, extension);
-    if (!doesExist(img_file)) {
 
+    if (!doesExist(img_file)) {
       continue;
     }
     img = imread(img_file, CV_LOAD_IMAGE_COLOR);
